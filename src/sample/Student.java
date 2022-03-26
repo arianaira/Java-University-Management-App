@@ -1,6 +1,6 @@
 package sample;
 
-public class Student
+public class Student extends org.apache.shiro.SecurityUtils
 {
     private String major;
     private int studentID;

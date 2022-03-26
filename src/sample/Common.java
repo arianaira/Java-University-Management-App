@@ -1,5 +1,8 @@
 package sample;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
+
 public class Common
 {
     private String name;
@@ -31,9 +34,9 @@ public class Common
 
     }
 
-    protected static void login()
+    protected static void login(String username, int password)
     {
-
+        Subject currentUser = SecurityUtils.getSubject();
     }
 
     protected static void singUp()
