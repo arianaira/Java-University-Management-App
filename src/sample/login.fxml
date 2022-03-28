@@ -8,27 +8,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="683.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
-   <ImageView fx:id="img" fitHeight="374.0" fitWidth="683.0" layoutY="35.0" pickOnBounds="true" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-      <Image url="@t.jpg" />
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="683.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+   <ImageView fx:id="img" fitHeight="416.0" fitWidth="683.0" layoutY="-6.0" pickOnBounds="true">
+      <Image url="@first.jpg" />
    </ImageView>
-   <AnchorPane layoutX="180.0" layoutY="75.0" prefHeight="257.0" prefWidth="325.0" style="-fx-background-color: #122430;">
-      <TextField fx:id="username" layoutX="51.0" layoutY="42.0" prefHeight="37.0" prefWidth="223.0" promptText="username" style="-fx-background-radius: 0;" />
-      <TextField fx:id="password" layoutX="51.0" layoutY="110.0" prefHeight="37.0" prefWidth="223.0" promptText="password" style="-fx-background-radius: 0;" />
-      <Button fx:id="login" layoutX="51.0" layoutY="196.0" mnemonicParsing="false" onAction="#login" prefHeight="37.0" prefWidth="223.0" style="-fx-background-color: #514624; -fx-background-radius: 0;" text="Login" textAlignment="CENTER" textFill="WHITE">
+   <AnchorPane layoutX="63.0" layoutY="30.0" prefHeight="324.0" prefWidth="244.0" style="-fx-border-color: white; -fx-border-image-width: 100;">
+      <TextField fx:id="username" layoutX="32.0" layoutY="40.0" prefHeight="37.0" prefWidth="181.0" promptText="username" style="-fx-background-radius: 0; -fx-background-color: white;" />
+      <TextField fx:id="password" layoutX="32.0" layoutY="101.0" prefHeight="37.0" prefWidth="181.0" promptText="password" style="-fx-background-radius: 0; -fx-background-color: white;" />
+      <Button layoutX="81.0" layoutY="217.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #36682f;" text="Login" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Italic" size="14.0" />
          </font>
       </Button>
+      <Button layoutX="11.0" layoutY="247.0" mnemonicParsing="false" onAction="#signUp" prefHeight="39.0" prefWidth="223.0" style="-fx-background-color: transparent;" text="Or Create New Account" textFill="#817e7e">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="msg" alignment="CENTER" layoutX="35.0" layoutY="162.0" prefHeight="30.0" prefWidth="181.0" textFill="#842222">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
    </AnchorPane>
-   <Label alignment="TOP_CENTER" layoutX="-5.0" prefHeight="37.0" prefWidth="690.0" style="-fx-background-color: #514624;" text="Educational International System" textAlignment="CENTER" textFill="WHITE">
+   <Button layoutY="379.0" mnemonicParsing="false" onAction="#quit" style="-fx-background-color: transparent;" text="Quit" textFill="#817e7e">
       <font>
-         <Font name="System Italic" size="25.0" />
-      </font>
-   </Label>
-   <Button layoutX="240.0" layoutY="326.0" mnemonicParsing="false" onAction="#signUp" prefHeight="37.0" prefWidth="205.0" style="-fx-background-color: transparent;" text="Or Create New Account" textFill="#b3b3b3">
-      <font>
-         <Font name="System Italic" size="16.0" />
+         <Font name="System Italic" size="14.0" />
       </font>
    </Button>
+   <Label layoutX="342.0" layoutY="96.0" prefHeight="37.0" prefWidth="293.0" text="Welcome To The Educational System" textFill="#7b756b">
+      <font>
+         <Font name="System Bold Italic" size="17.0" />
+      </font>
+   </Label>
 </AnchorPane>

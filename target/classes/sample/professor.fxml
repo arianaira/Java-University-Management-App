@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="408.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ProfessorController">
+   <children>
+      <Button layoutY="379.0" mnemonicParsing="false" onAction="#quit" style="-fx-background-color: transparent;" text="Quit" textFill="WHITE">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="425.0" fitWidth="683.0" layoutY="-2.0" pickOnBounds="true">
+         <image>
+            <Image url="@p.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="319.0" layoutY="80.0" prefHeight="250.0" prefWidth="249.0" style="-fx-border-color: #227653;">
+         <children>
+            <Button layoutX="26.0" layoutY="137.0" mnemonicParsing="false" onAction="#courses" prefHeight="91.0" prefWidth="197.0" style="-fx-background-color: #26a69a; -fx-background-radius: 0;" text="Courses">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="26.0" layoutY="27.0" mnemonicParsing="false" onAction="#removeStudent" prefHeight="91.0" prefWidth="197.0" style="-fx-background-color: #a1887f; -fx-background-radius: 0;" text="Remove Student">
+               <font>
+                  <Font name="System Italic" size="19.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+      <Button layoutY="394.0" mnemonicParsing="false" onAction="#quit" style="-fx-background-color: transparent;" text="Quit" textFill="#7b7878">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="62.0" layoutY="395.0" mnemonicParsing="false" onAction="#editInfo" style="-fx-background-color: transpose;" text="Edit Info" textFill="#7b7878">
+         <font>
+            <Font name="System Italic" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

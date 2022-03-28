@@ -1,9 +1,17 @@
 package sample;
 
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.subject.Subject;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Common
+import java.io.IOException;
+
+import static sample.Main.usernamePassword;
+
+public abstract class Common
 {
     private String name;
     private String lastName;
@@ -24,28 +32,40 @@ public class Common
         this.faculty = faculty;
     }
 
-    protected static void quit()
+    protected static void quit(ActionEvent event) throws IOException
     {
-        System.exit(0);
+        Parent login = FXMLLoader.load(Common.class.getResource("login.fxml"));
+        Stage loginStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene loginScene = new Scene(login);
+        loginStage.setScene(loginScene);
+        loginStage.show();
     }
 
-    protected static void editInfo()
+    public static boolean signUpAllowed(String username)
     {
-
+        return usernamePassword.containsKey(username);
     }
 
-    protected static void login(String username, int password)
-    {
-        Subject currentUser = SecurityUtils.getSubject();
-    }
+    protected abstract void editInfo();
 
-    protected static void singUp()
+    public static Boolean passwordCorrect(String username, String password)
     {
 
+        return usernamePassword.get(username).equals(password);
     }
+
+    public static Boolean usernameExistence(String username)
+    {
+        return usernamePassword.containsValue(username);
+    }
+
+    protected abstract void login(String username, String password, ActionEvent event) throws IOException;
+
+    protected abstract void singUp(Object current, String username, String password, ActionEvent event) throws IOException;
 
     protected static void logOut()
     {
 
     }
+
 }

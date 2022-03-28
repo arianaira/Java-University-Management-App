@@ -1,9 +1,21 @@
 package sample;
 
-public class Student extends org.apache.shiro.SecurityUtils
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.lang.Object;
+
+import static sample.Main.*;
+
+public class Student extends Common
 {
     private String major;
-    private int studentID;
+    private String studentID;
     private int entryYear;
 
     public void setMajor(String major)
@@ -11,7 +23,7 @@ public class Student extends org.apache.shiro.SecurityUtils
         this.major = major;
     }
 
-    public void setStudentID(int studentID)
+    public void setStudentID(String studentID)
     {
         this.studentID = studentID;
     }
@@ -32,10 +44,7 @@ public class Student extends org.apache.shiro.SecurityUtils
 
     public void register()
     {
-        if (registerStatus())
-        {
 
-        }
     }
 
     public void scores()
@@ -46,5 +55,35 @@ public class Student extends org.apache.shiro.SecurityUtils
     public void schedule()
     {
 
+    }
+
+    @Override
+    protected void editInfo()
+    {
+
+    }
+
+    @Override
+    protected void login(String username, String password, ActionEvent event) throws IOException
+    {
+        Parent student = FXMLLoader.load(getClass().getResource("Student.fxml"));
+
+        StudentController temp = new StudentController();
+        temp.setUsername(username);
+
+        Stage studentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene studentScene = new Scene(student);
+        studentStage.setScene(studentScene);
+        studentStage.show();
+    }
+
+    @Override
+    public void singUp(Object current, String username, String password, ActionEvent event) throws IOException
+    {
+        Student newS = (Student) current;
+        students.put(newS, username);
+        usernamePassword.put(username, password);
+
+        newS.login(username, password, event);
     }
 }
