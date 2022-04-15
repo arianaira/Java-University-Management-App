@@ -16,12 +16,6 @@ public class ProfessorController
     }
 
     @FXML
-    private void removeStudent(ActionEvent event)
-    {
-
-    }
-
-    @FXML
     private void courses(ActionEvent event)
     {
 

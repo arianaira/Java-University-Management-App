@@ -25,7 +25,7 @@
             <Font name="System Italic" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="msg" alignment="CENTER" layoutX="35.0" layoutY="162.0" prefHeight="30.0" prefWidth="181.0" textFill="#842222">
+      <Label fx:id="msg" alignment="CENTER" layoutX="36.0" layoutY="179.0" prefHeight="30.0" prefWidth="181.0" textFill="#842222">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>

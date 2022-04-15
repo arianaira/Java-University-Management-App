@@ -16,7 +16,7 @@ import static Model.Main.*;
 public class Student extends Common
 {
     private String major;
-    private String studentID;
+    private int studentID;
     private int entryYear;
 
     public void setMajor(String major)
@@ -24,9 +24,9 @@ public class Student extends Common
         this.major = major;
     }
 
-    public void setStudentID(String studentID)
+    public void setStudentID()
     {
-        this.studentID = studentID;
+        this.studentID = students.size() + 1;
     }
 
     public void setEntryYear(int entryYear)
@@ -36,7 +36,7 @@ public class Student extends Common
 
     public Boolean registerStatus()
     {
-        if (CentralManagment.newSemester())
+        if (CentralManagment.newSemesterExists)
         {
             return false;
         }

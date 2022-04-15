@@ -61,7 +61,7 @@ public abstract class Common
 
     public static Boolean usernameExistence(String username)
     {
-        return usernamePassword.containsValue(username);
+        return usernamePassword.containsKey(username);
     }
 
     protected abstract void login(String username, String password, ActionEvent event) throws IOException;

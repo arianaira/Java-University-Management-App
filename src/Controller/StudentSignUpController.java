@@ -1,28 +1,28 @@
 package Controller;
 
+import Model.CentralManagment;
 import Model.Common;
+import Model.Faculty;
 import Model.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class StudentSignUpController
+public class StudentSignUpController implements Initializable
 {
     @FXML
     private TextField name;
 
     @FXML
     private TextField lastname;
-
-    @FXML
-    private TextField studentID;
-
-    @FXML
-    private TextField faculty;
 
     @FXML
     private TextField major;
@@ -35,6 +35,9 @@ public class StudentSignUpController
 
     @FXML
     private TextField username;
+
+    @FXML
+    ComboBox faculties;
 
 
     @FXML
@@ -50,14 +53,6 @@ public class StudentSignUpController
         else if (lastname.getText().trim().equals(""))
         {
             msg.setText(("last name not entered"));
-        }
-        else if (studentID.getText().trim().equals(""))
-        {
-            msg.setText("student ID not entered");
-        }
-        else if (faculty.getText().trim().equals(""))
-        {
-            msg.setText("faculty not entered");
         }
         else if (major.getText().trim().equals(""))
         {
@@ -76,11 +71,11 @@ public class StudentSignUpController
             Student current = new Student();
             current.setName(name.getText());
             current.setLastName(lastname.getText());
-            current.setFaculty(faculty.getText());
-            current.setStudentID(studentID.getText());
+            current.setStudentID();
             current.setMajor(major.getText());
             current.setEntryYear(Integer.parseInt(entryYear.getText()));
             current.singUp(current, username.getText(), password.getText(), event);
+            current.setFaculty(faculties.getValue().toString());
         }
     }
 
@@ -95,5 +90,14 @@ public class StudentSignUpController
     private void quit(ActionEvent event)
     {
         Common.quit();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources)
+    {
+        for (Faculty faculty : CentralManagment.faculties)
+        {
+            faculties.getItems().add(faculty.getFacultyName());
+        }
     }
 }
