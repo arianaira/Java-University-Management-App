@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.CentralManagment;
+import Model.CentralManagement;
 import Model.Common;
 import Model.Faculty;
 import Model.Student;
@@ -74,8 +74,8 @@ public class StudentSignUpController implements Initializable
             current.setStudentID();
             current.setMajor(major.getText());
             current.setEntryYear(Integer.parseInt(entryYear.getText()));
-            current.singUp(current, username.getText(), password.getText(), event);
             current.setFaculty(faculties.getValue().toString());
+            current.singUp(current, username.getText(), password.getText(), event);
         }
     }
 
@@ -95,7 +95,7 @@ public class StudentSignUpController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        for (Faculty faculty : CentralManagment.faculties)
+        for (Faculty faculty : CentralManagement.faculties)
         {
             faculties.getItems().add(faculty.getFacultyName());
         }

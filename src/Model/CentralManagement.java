@@ -1,9 +1,16 @@
 package Model;
 
-import java.awt.*;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
-public class CentralManagment
+public class CentralManagement
 {
     public static Boolean newSemesterExists = false;
     public static ArrayList<Semester> semesters = new ArrayList<>();
@@ -11,7 +18,6 @@ public class CentralManagment
 
     public static void makeFaculty(String facultyName)
     {
-        //Main.usernamePassword.put("icontrolyouall", "control34");
         Faculty newFaculty = new Faculty();
         newFaculty.setFacultyName(facultyName);
         faculties.add(newFaculty);
@@ -24,11 +30,10 @@ public class CentralManagment
         newSemesterExists = true;
     }
 
-    public Boolean newCourse(Semester newSemester)
+    public void newCourse(Semester newSemester)
     {
         Course newCourse = new Course();
         newSemester.courses.add(newCourse);
-        return false;
     }
 
 
@@ -38,14 +43,12 @@ public class CentralManagment
     }
 
 
-    protected void login(String username, String password)
+    public static void login(String username, String password, ActionEvent event) throws IOException
     {
-
-    }
-
-
-    protected void singUp(TextField username, TextField password)
-    {
-
+        Parent central = FXMLLoader.load(CentralManagement.class.getResource("/View/centralManagement.fxml"));
+        Stage centralStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene centralScene = new Scene(central);
+        centralStage.setScene(centralScene);
+        centralStage.show();
     }
 }

@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.CentralManagement;
 import Model.Semester;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,12 +13,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class centralManagmentController
+public class centralManagementController
 {
     @FXML
-    private void newSemester(javafx.event.ActionEvent event)
+    private void newSemester(javafx.event.ActionEvent event) throws IOException
     {
-        Semester newSemester = new Semester();
+        CentralManagement.newSemester();
+        Parent newSem = FXMLLoader.load(getClass().getResource("/View/newSemester.fxml"));
+        Stage newSemStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene newSemScene = new Scene(newSem);
+        newSemStage.setScene(newSemScene);
+        newSemStage.show();
+
     }
 
     @FXML

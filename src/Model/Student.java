@@ -36,7 +36,7 @@ public class Student extends Common
 
     public Boolean registerStatus()
     {
-        if (CentralManagment.newSemesterExists)
+        if (CentralManagement.newSemesterExists)
         {
             return false;
         }

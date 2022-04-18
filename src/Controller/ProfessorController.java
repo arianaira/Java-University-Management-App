@@ -22,12 +22,6 @@ public class ProfessorController
     }
 
     @FXML
-    private void logOut(ActionEvent event) throws IOException
-    {
-        Common.logOut(event);
-    }
-
-    @FXML
     private void editInfo(ActionEvent event)
     {
     }
@@ -36,5 +30,11 @@ public class ProfessorController
     private void quit(ActionEvent event)
     {
 
+    }
+
+    @FXML
+    private void LogOut(ActionEvent event) throws IOException
+    {
+        Common.logOut(event);
     }
 }

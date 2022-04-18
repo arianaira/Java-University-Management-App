@@ -31,18 +31,10 @@ public class Main extends Application
 
     static void alreadySaved()
     {
-        CentralManagment.makeFaculty("Math");
-        CentralManagment.makeFaculty("Psychology");
-        CentralManagment.makeFaculty("Physics");
+        usernamePassword.put("icontrolyouall", "control34");
 
-        Student imaginary = new Student();
-        imaginary.setName("akbar");
-        imaginary.setLastName("asqari");
-        imaginary.setMajor("elahiat");
-        imaginary.setStudentID();
-        imaginary.setFaculty("Math");
-        imaginary.setEntryYear(1400);
-        students.put(imaginary, "imaginaryStudent");
-        usernamePassword.put("imaginaryStudent", "imagine1400");
+        CentralManagement.makeFaculty("Math");
+        CentralManagement.makeFaculty("Psychology");
+        CentralManagement.makeFaculty("Physics");
     }
 }

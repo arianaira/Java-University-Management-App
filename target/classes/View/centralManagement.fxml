@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="408.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.centralManagmentController">
+<AnchorPane prefHeight="408.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.centralManagementController">
    <ImageView fitHeight="438.0" fitWidth="683.0" layoutY="-14.0" pickOnBounds="true">
       <Image url="@9.jpg" />
    </ImageView>
@@ -15,7 +15,7 @@
          <Font name="System Italic" size="14.0" />
       </font>
    </Button>
-   <Button layoutX="107.0" layoutY="23.0" mnemonicParsing="false" onAction="#makeFaculty" prefHeight="86.0" prefWidth="133.0" style="-fx-background-radius: 0; -fx-background-color: #b2dfdb;" text="Make Faculty">
+   <Button layoutX="107.0" layoutY="23.0" mnemonicParsing="false" onAction="#makeFaculty" prefHeight="86.0" prefWidth="133.0" style="-fx-background-radius: 0; -fx-background-color: #b2dfdb;" text="New Faculty">
       <font>
          <Font name="System Italic" size="17.0" />
       </font>

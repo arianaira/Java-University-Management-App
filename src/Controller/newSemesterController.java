@@ -1,9 +1,9 @@
 package Controller;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
-import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -15,34 +15,33 @@ public class newSemesterController implements Initializable
     @FXML
     private Label createdDate;
 
-    @FXML
-    void editInfo(ActionEvent event)
-    {
-
-    }
-
-    @FXML
-    void logOut(ActionEvent event)
-    {
-
-    }
-
-    @FXML
-    void newCourse(ActionEvent event)
-    {
-
-    }
-
-    @FXML
-    void quit(ActionEvent event)
-    {
-
-    }
-
-
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
         createdDate.setText("New Semester Created in "+date.toString());
+    }
+
+    @FXML
+    private void quit(javafx.event.ActionEvent event)
+    {
+
+    }
+
+    @FXML
+    private void editInfo(javafx.event.ActionEvent event)
+    {
+
+    }
+
+    @FXML
+    private void newCourse(ActionEvent event)
+    {
+
+    }
+
+    @FXML
+    private void logOut(ActionEvent event)
+    {
+
     }
 }

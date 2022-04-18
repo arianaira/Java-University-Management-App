@@ -15,7 +15,7 @@
    <ImageView fitHeight="425.0" fitWidth="683.0" layoutY="-2.0" pickOnBounds="true">
       <Image url="@p.jpg" />
    </ImageView>
-   <AnchorPane layoutX="327.0" layoutY="142.0" prefHeight="137.0" prefWidth="249.0" style="-fx-border-color: #227653;">
+   <AnchorPane layoutX="326.0" layoutY="109.0" prefHeight="137.0" prefWidth="249.0" style="-fx-border-color: #227653;">
       <Button layoutX="26.0" layoutY="24.0" mnemonicParsing="false" onAction="#courses" prefHeight="91.0" prefWidth="197.0" style="-fx-background-color: #26a69a; -fx-background-radius: 0;" text="Courses">
          <font>
             <Font name="System Italic" size="20.0" />

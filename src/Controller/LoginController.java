@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.CentralManagement;
 import Model.Common;
 import Model.Professor;
 import Model.Student;
@@ -15,6 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static Model.Main.professors;
 import static Model.Main.students;
 
 public class LoginController
@@ -41,10 +43,14 @@ public class LoginController
                     Student current = new Student();
                     current.login(username.getText(), password.getText(), event);
                 }
-                else
+                else if (professors.containsValue(username.getText()))
                 {
                     Professor current = new Professor();
                     current.login(username.getText(), password.getText(), event);
+                }
+                else
+                {
+                    CentralManagement.login(username.getText(), password.getText(), event);
                 }
 
             }

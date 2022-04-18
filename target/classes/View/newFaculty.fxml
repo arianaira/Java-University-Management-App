@@ -8,47 +8,51 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="408.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.newFacultyController.java">
-   <children>
-      <ImageView fitHeight="438.0" fitWidth="683.0" layoutY="-14.0" pickOnBounds="true">
-         <image>
-            <Image url="@ss.jpg" />
-         </image>
-      </ImageView>
-      <Button layoutY="394.0" mnemonicParsing="false" onAction="#quit" style="-fx-background-color: transparent;" text="Quit" textFill="#7b7878">
-         <font>
-            <Font name="System Italic" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="107.0" layoutY="395.0" mnemonicParsing="false" onAction="#editInfo" style="-fx-background-color: transpose;" text="Edit Info" textFill="#626060">
-         <font>
-            <Font name="System Italic" size="13.0" />
-         </font>
-      </Button>
-      <Button layoutX="47.0" layoutY="397.0" mnemonicParsing="false" onAction="#logOut" style="-fx-background-color: transparent;" text="LogOut" textFill="#656464">
-         <font>
-            <Font name="System Italic" size="12.0" />
-         </font>
-      </Button>
-      <TextField fx:id="newFaculty" layoutX="214.0" layoutY="159.0" prefHeight="29.0" prefWidth="225.0" />
-      <Label layoutX="207.0" layoutY="127.0" text="Enter The Name Of The New Faculty">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <Button layoutX="225.0" layoutY="205.0" mnemonicParsing="false" onAction="#create" prefHeight="45.0" prefWidth="82.0" style="-fx-background-color: #78909c;" text="Create">
-         <font>
-            <Font size="16.0" />
-         </font></Button>
-      <Label fx:id="repetitious" alignment="CENTER" layoutX="225.0" layoutY="268.0" prefHeight="30.0" prefWidth="203.0" textFill="#a81313">
-         <font>
-            <Font name="System Italic" size="12.0" />
-         </font>
-      </Label>
-      <Button layoutX="346.0" layoutY="205.0" mnemonicParsing="false" onAction="#back" prefHeight="45.0" prefWidth="82.0" style="-fx-background-color: #78909c;" text="Back">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-   </children>
+<AnchorPane prefHeight="408.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.newFacultyController">
+   <ImageView fitHeight="438.0" fitWidth="683.0" layoutY="-14.0" pickOnBounds="true">
+      <Image url="@ss.jpg"/>
+   </ImageView>
+   <Button layoutY="394.0" mnemonicParsing="false" onAction="#quit" style="-fx-background-color: transparent;"
+           text="Quit" textFill="#7b7878">
+      <font>
+         <Font name="System Italic" size="14.0"/>
+      </font>
+   </Button>
+   <Button layoutX="107.0" layoutY="395.0" mnemonicParsing="false" onAction="#editInfo"
+           style="-fx-background-color: transpose;" text="Edit Info" textFill="#626060">
+      <font>
+         <Font name="System Italic" size="13.0"/>
+      </font>
+   </Button>
+   <Button layoutX="47.0" layoutY="397.0" mnemonicParsing="false" onAction="#logOut"
+           style="-fx-background-color: transparent;" text="LogOut" textFill="#656464">
+      <font>
+         <Font name="System Italic" size="12.0"/>
+      </font>
+   </Button>
+   <TextField fx:id="newF" layoutX="214.0" layoutY="159.0" prefHeight="29.0" prefWidth="225.0"/>
+   <Label layoutX="207.0" layoutY="127.0" text="Enter The Name Of The New Faculty">
+      <font>
+         <Font name="System Bold Italic" size="14.0"/>
+      </font>
+   </Label>
+   <Button layoutX="214.0" layoutY="212.0" mnemonicParsing="false" onAction="#create" prefHeight="45.0"
+           prefWidth="100.0" style="-fx-background-color: #78909c;" text="Create">
+      <font>
+         <Font size="16.0"/>
+      </font>
+   </Button>
+   <Label fx:id="repetitious" alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="268.0"
+          prefHeight="30.0" prefWidth="320.0" textFill="#a81313">
+      <font>
+         <Font name="System Italic" size="12.0"/>
+      </font>
+   </Label>
+   <Button layoutX="339.0" layoutY="212.0" mnemonicParsing="false" onAction="#back" prefHeight="45.0" prefWidth="100.0"
+           style="-fx-background-color: #78909c;" text="Back">
+      <font>
+         <Font size="16.0"/>
+      </font>
+   </Button>
 </AnchorPane>

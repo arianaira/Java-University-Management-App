@@ -46,10 +46,12 @@ public class Professor extends Common
     }
 
     @Override
-    protected void singUp(Object current, String username, String password, ActionEvent event)
+    public void singUp(Object current, String username, String password, ActionEvent event) throws IOException
     {
-        Professor newP = new Professor();
+        Professor newP = (Professor) current;
         professors.put(newP, username);
         usernamePassword.put(username, password);
+
+        newP.login(username, password, event);
     }
 }
