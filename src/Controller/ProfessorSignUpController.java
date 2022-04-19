@@ -63,6 +63,13 @@ public class ProfessorSignUpController implements Initializable
             current.setLastName(lastname.getText());
             current.setGroup(group.getText());
             current.setFaculty(faculties.getValue().toString());
+            for (Faculty faculty : CentralManagement.faculties)
+            {
+                if (faculty.getFacultyName().equals(faculties.getValue()))
+                {
+                    faculty.professors.add(current);
+                }
+            }
             current.singUp(current, username.getText(), password.getText(), event);
         }
     }

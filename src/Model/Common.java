@@ -22,6 +22,16 @@ public abstract class Common
         this.name = name;
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
+    public String getLastName()
+    {
+        return lastName;
+    }
+
     public void setLastName(String lastName)
     {
         this.lastName = lastName;

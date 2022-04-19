@@ -1,38 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="408.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.newCourseController">
-   <children>
-      <ImageView fitHeight="438.0" fitWidth="683.0" layoutY="-14.0" pickOnBounds="true">
-         <image>
-            <Image url="@9.jpg" />
-         </image>
-      </ImageView>
-      <Button layoutY="394.0" mnemonicParsing="false" onAction="#quit" style="-fx-background-color: transparent;" text="Quit" textFill="#7b7878">
+   <ImageView fitHeight="438.0" fitWidth="683.0" layoutY="-14.0" pickOnBounds="true">
+      <Image url="@9.jpg" />
+   </ImageView>
+   <AnchorPane layoutX="163.0" layoutY="67.0" prefHeight="320.0" prefWidth="358.0" style="-fx-border-color: #78909c;">
+      <Button layoutX="56.0" layoutY="264.0" mnemonicParsing="false" onAction="#create" prefHeight="42.0"
+              prefWidth="107.0" style="-fx-background-color: #78909c;" text="Create">
          <font>
-            <Font name="System Italic" size="14.0" />
+            <Font name="System Bold Italic" size="15.0"/>
          </font>
       </Button>
-      <Button layoutX="107.0" layoutY="395.0" mnemonicParsing="false" onAction="#editInfo" style="-fx-background-color: transpose;" text="Edit Info" textFill="#626060">
+      <ComboBox fx:id="chooseProfessor" layoutX="34.0" layoutY="192.0" opacity="0.81" prefHeight="30.0"
+                prefWidth="286.0" promptText="Choose Professor For This Course"/>
+      <ComboBox fx:id="faculties" layoutX="34.0" layoutY="139.0" onAction="#facultySelected" opacity="0.83"
+                prefHeight="29.0" prefWidth="286.0" promptText="Choose Related Faculty"/>
+      <TextField fx:id="courseName" layoutX="34.0" layoutY="29.0" prefHeight="30.0" prefWidth="286.0"
+                 promptText="Name This Course "/>
+      <TextField fx:id="cu" layoutX="34.0" layoutY="83.0" prefHeight="30.0" prefWidth="286.0"
+                 promptText="Enter Course Units"/>
+      <Button layoutX="178.0" layoutY="263.0" mnemonicParsing="false" onAction="#back" prefHeight="42.0"
+              prefWidth="107.0" style="-fx-background-color: #78909c;" text="Back">
          <font>
-            <Font name="System Italic" size="13.0" />
+            <Font name="System Bold Italic" size="15.0"/>
          </font>
       </Button>
-      <Button layoutX="47.0" layoutY="397.0" mnemonicParsing="false" onAction="#logOut" style="-fx-background-color: transparent;" text="LogOut" textFill="#656464">
-         <font>
-            <Font name="System Italic" size="12.0" />
-         </font>
-      </Button>
-      <Label fx:id="msg" alignment="CENTER" contentDisplay="CENTER" layoutX="98.0" layoutY="14.0" prefHeight="29.0" prefWidth="488.0">
-         <font>
-            <Font name="System Italic" size="12.0" />
-         </font>
-      </Label>
-   </children>
+   </AnchorPane>
+   <Button layoutY="394.0" mnemonicParsing="false" onAction="#quit" style="-fx-background-color: transparent;" text="Quit" textFill="#7b7878">
+      <font>
+         <Font name="System Italic" size="14.0" />
+      </font>
+   </Button>
+   <Button layoutX="107.0" layoutY="395.0" mnemonicParsing="false" onAction="#editInfo" style="-fx-background-color: transpose;" text="Edit Info" textFill="#626060">
+      <font>
+         <Font name="System Italic" size="13.0" />
+      </font>
+   </Button>
+   <Button layoutX="47.0" layoutY="397.0" mnemonicParsing="false" onAction="#logOut" style="-fx-background-color: transparent;" text="LogOut" textFill="#656464">
+      <font>
+         <Font name="System Italic" size="12.0" />
+      </font>
+   </Button>
+   <Label fx:id="msg" alignment="CENTER" contentDisplay="CENTER" layoutX="98.0" layoutY="14.0" prefHeight="42.0" prefWidth="488.0" textFill="#881b1b">
+      <font>
+         <Font name="System Italic" size="16.0" />
+      </font>
+   </Label>
 </AnchorPane>

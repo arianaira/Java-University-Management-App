@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Faculty
 {
-    ArrayList<Student> students = new ArrayList<>();
-    ArrayList<Student> professors = new ArrayList<>();
-    ArrayList<Student> courses = new ArrayList<>();
+    public ArrayList<Student> students = new ArrayList<>();
+    public ArrayList<Professor> professors = new ArrayList<>();
+    public ArrayList<Course> courses = new ArrayList<>();
 
     String facultyName;
 

@@ -37,7 +37,7 @@ public class StudentSignUpController implements Initializable
     private TextField username;
 
     @FXML
-    ComboBox faculties;
+    ComboBox<String> faculties;
 
 
     @FXML
@@ -74,7 +74,14 @@ public class StudentSignUpController implements Initializable
             current.setStudentID();
             current.setMajor(major.getText());
             current.setEntryYear(Integer.parseInt(entryYear.getText()));
-            current.setFaculty(faculties.getValue().toString());
+            current.setFaculty(faculties.getValue());
+            for (Faculty faculty : CentralManagement.faculties)
+            {
+                if (faculty.getFacultyName().equals(faculties.getValue()))
+                {
+                    faculty.students.add(current);
+                }
+            }
             current.singUp(current, username.getText(), password.getText(), event);
         }
     }

@@ -30,7 +30,7 @@ public class CentralManagement
         newSemesterExists = true;
     }
 
-    public void newCourse(Semester newSemester)
+    public void newCourse(Semester newSemester, String courseName)
     {
         Course newCourse = new Course();
         newSemester.courses.add(newCourse);

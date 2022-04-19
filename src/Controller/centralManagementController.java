@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.CentralManagement;
-import Model.Semester;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import Model.Common;
@@ -24,13 +23,16 @@ public class centralManagementController
         Scene newSemScene = new Scene(newSem);
         newSemStage.setScene(newSemScene);
         newSemStage.show();
-
     }
 
     @FXML
-    private void newCourse(javafx.event.ActionEvent event)
+    private void newCourse(javafx.event.ActionEvent event) throws IOException
     {
-
+        Parent newCourse = FXMLLoader.load(getClass().getResource("/View/newCourse.fxml"));
+        Stage newCourseStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene newCourseScene = new Scene(newCourse);
+        newCourseStage.setScene(newCourseScene);
+        newCourseStage.show();
     }
 
     @FXML
