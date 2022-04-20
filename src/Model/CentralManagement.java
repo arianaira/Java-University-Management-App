@@ -16,6 +16,9 @@ public class CentralManagement
     public static ArrayList<Semester> semesters = new ArrayList<>();
     public static ArrayList<Faculty> faculties = new ArrayList<>();
 
+    public static Student currentStudent = new Student();
+    public static Professor currentProfessor = new Professor();
+
     public static void makeFaculty(String facultyName)
     {
         Faculty newFaculty = new Faculty();
@@ -30,7 +33,7 @@ public class CentralManagement
         newSemesterExists = true;
     }
 
-    public void newCourse(Semester newSemester, String courseName)
+    public void newCourse(Semester newSemester)
     {
         Course newCourse = new Course();
         newSemester.courses.add(newCourse);

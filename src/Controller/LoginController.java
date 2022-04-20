@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.CentralManagement;
-import Model.Common;
-import Model.Professor;
-import Model.Student;
+import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,11 +37,31 @@ public class LoginController
             {
                 if (students.containsValue(username.getText()))
                 {
+                    for (Faculty faculty : CentralManagement.faculties)
+                    {
+                        for (Student student : faculty.students)
+                        {
+                            if (student.getUsername().equals(username.getText()))
+                            {
+                                CentralManagement.currentStudent = student;
+                            }
+                        }
+                    }
                     Student current = new Student();
                     current.login(username.getText(), password.getText(), event);
                 }
                 else if (professors.containsValue(username.getText()))
                 {
+                    for (Faculty faculty : CentralManagement.faculties)
+                    {
+                        for (Professor professor : faculty.professors)
+                        {
+                            if (professor.getUsername().equals(username.getText()))
+                            {
+                                CentralManagement.currentProfessor = professor;
+                            }
+                        }
+                    }
                     Professor current = new Professor();
                     current.login(username.getText(), password.getText(), event);
                 }

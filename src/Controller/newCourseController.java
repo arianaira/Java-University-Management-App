@@ -45,10 +45,14 @@ public class newCourseController implements Initializable
             currentC.setProfessor(chooseProfessor.getValue());
             for (Faculty faculty : CentralManagement.faculties)
             {
-                faculty.courses.add(currentC);
+                if (faculties.getValue().equals(faculty.getFacultyName()))
+                {
+                    faculty.courses.add(currentC);
+                }
+                CentralManagement.semesters.get(CentralManagement.semesters.size() - 1).courses.add(currentC);
                 break;
             }
-            msg.setText("Course Successfully Created");
+            msg.setText("Course "+courseName.getText()+" Successfully Created");
         }
     }
 

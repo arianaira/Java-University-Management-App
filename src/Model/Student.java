@@ -1,6 +1,5 @@
 package Model;
 
-import Controller.StudentController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,14 +9,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.lang.Object;
+import java.util.ArrayList;
 
 import static Model.Main.*;
 
 public class Student extends Common
 {
+    public ArrayList<Course> registeredCourses = new ArrayList<>();
+
     private String major;
     private int studentID;
     private int entryYear;
+    public Boolean registerStatus = false;
 
     public void setMajor(String major)
     {
@@ -34,18 +37,9 @@ public class Student extends Common
         this.entryYear = entryYear;
     }
 
-    public Boolean registerStatus()
+    public void register(Course course)
     {
-        if (CentralManagement.newSemesterExists)
-        {
-            return false;
-        }
-        return true;
-    }
-
-    public void register()
-    {
-
+        registeredCourses.add(course);
     }
 
     public void scores()
@@ -68,10 +62,6 @@ public class Student extends Common
     public void login(String username, String password, ActionEvent event) throws IOException
     {
         Parent student = FXMLLoader.load(getClass().getResource("/View/Student.fxml"));
-
-        StudentController temp = new StudentController();
-        temp.setUsername(username);
-
         Stage studentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene studentScene = new Scene(student);
         studentStage.setScene(studentScene);

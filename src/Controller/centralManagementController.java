@@ -48,12 +48,13 @@ public class centralManagementController
     @FXML
     private void editInfo(ActionEvent event)
     {
+
     }
 
     @FXML
     private void quit(ActionEvent event)
     {
-
+        Common.quit();
     }
 
     @FXML

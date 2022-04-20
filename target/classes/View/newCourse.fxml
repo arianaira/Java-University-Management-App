@@ -13,23 +13,21 @@
    <ImageView fitHeight="438.0" fitWidth="683.0" layoutY="-14.0" pickOnBounds="true">
       <Image url="@9.jpg" />
    </ImageView>
-   <AnchorPane fx:id="back" layoutX="163.0" layoutY="67.0" prefHeight="320.0" prefWidth="358.0" style="-fx-border-color: #78909c;">
-      <children>
-         <Button layoutX="56.0" layoutY="264.0" mnemonicParsing="false" onAction="#create" prefHeight="42.0" prefWidth="107.0" style="-fx-background-color: #78909c;" text="Create">
-            <font>
-               <Font name="System Bold Italic" size="15.0" />
-            </font>
-         </Button>
-         <ComboBox fx:id="chooseProfessor" layoutX="34.0" layoutY="192.0" opacity="0.81" prefHeight="30.0" prefWidth="286.0" promptText="Choose Professor For This Course" />
-         <ComboBox fx:id="faculties" layoutX="34.0" layoutY="139.0" onAction="#facultySelected" opacity="0.83" prefHeight="29.0" prefWidth="286.0" promptText="Choose Related Faculty" />
-         <TextField fx:id="courseName" layoutX="34.0" layoutY="29.0" prefHeight="30.0" prefWidth="286.0" promptText="Name This Course " />
-         <TextField fx:id="cu" layoutX="34.0" layoutY="83.0" prefHeight="30.0" prefWidth="286.0" promptText="Enter Course Units" />
-         <Button layoutX="178.0" layoutY="263.0" mnemonicParsing="false" onAction="#back" prefHeight="42.0" prefWidth="107.0" style="-fx-background-color: #78909c;" text="Back">
-            <font>
-               <Font name="System Bold Italic" size="15.0" />
-            </font>
-         </Button>
-      </children>
+   <AnchorPane layoutX="163.0" layoutY="67.0" prefHeight="320.0" prefWidth="358.0" style="-fx-border-color: #78909c;">
+      <Button layoutX="56.0" layoutY="264.0" mnemonicParsing="false" onAction="#create" prefHeight="42.0" prefWidth="107.0" style="-fx-background-color: #78909c;" text="Create">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="chooseProfessor" layoutX="34.0" layoutY="192.0" opacity="0.81" prefHeight="30.0" prefWidth="286.0" promptText="Choose Professor For This Course" />
+      <ComboBox fx:id="faculties" layoutX="34.0" layoutY="139.0" onAction="#facultySelected" opacity="0.83" prefHeight="29.0" prefWidth="286.0" promptText="Choose Related Faculty" />
+      <TextField fx:id="courseName" layoutX="34.0" layoutY="29.0" prefHeight="30.0" prefWidth="286.0" promptText="Name This Course " />
+      <TextField fx:id="cu" layoutX="34.0" layoutY="83.0" prefHeight="30.0" prefWidth="286.0" promptText="Enter Course Units" />
+      <Button layoutX="178.0" layoutY="263.0" mnemonicParsing="false" onAction="#back" prefHeight="42.0" prefWidth="107.0" style="-fx-background-color: #78909c;" text="Back">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
    </AnchorPane>
    <Button layoutY="394.0" mnemonicParsing="false" onAction="#quit" style="-fx-background-color: transparent;" text="Quit" textFill="#7b7878">
       <font>

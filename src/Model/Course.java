@@ -16,9 +16,19 @@ public class Course
         this.name = name;
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
     public void setProfessor(String professor)
     {
         this.professor = professor;
+    }
+
+    public String getProfessor()
+    {
+        return professor;
     }
 
     public void setUnits(int units)

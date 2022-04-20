@@ -75,6 +75,8 @@ public class StudentSignUpController implements Initializable
             current.setMajor(major.getText());
             current.setEntryYear(Integer.parseInt(entryYear.getText()));
             current.setFaculty(faculties.getValue());
+            current.setPassword(password.getText());
+            current.setUsername(username.getText());
             for (Faculty faculty : CentralManagement.faculties)
             {
                 if (faculty.getFacultyName().equals(faculties.getValue()))
