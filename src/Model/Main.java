@@ -33,6 +33,9 @@ public class Main extends Application
     {
         usernamePassword.put("icontrolyouall", "control34");
 
+        CentralManagement.username = "icontrolyouall";
+        CentralManagement.password = "control34";
+
         CentralManagement.makeFaculty("Math");
         CentralManagement.makeFaculty("Psychology");
         CentralManagement.makeFaculty("Physics");

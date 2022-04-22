@@ -46,9 +46,9 @@ public class centralManagementController
     }
 
     @FXML
-    private void editInfo(ActionEvent event)
+    private void editInfo(ActionEvent event) throws IOException
     {
-
+        CentralManagement.editInfo(event);
     }
 
     @FXML

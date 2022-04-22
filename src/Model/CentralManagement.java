@@ -18,6 +18,10 @@ public class CentralManagement
 
     public static Student currentStudent = new Student();
     public static Professor currentProfessor = new Professor();
+    public static Course currentCourse = new Course();
+
+    public static String username;
+    public static String password;
 
     public static void makeFaculty(String facultyName)
     {
@@ -33,16 +37,13 @@ public class CentralManagement
         newSemesterExists = true;
     }
 
-    public void newCourse(Semester newSemester)
+    public static void editInfo(ActionEvent event) throws IOException
     {
-        Course newCourse = new Course();
-        newSemester.courses.add(newCourse);
-    }
-
-
-    protected void editInfo()
-    {
-
+        Parent editCentral = FXMLLoader.load(CentralManagement.class.getResource("/View/editCentralManagement.fxml"));
+        Stage editCentralStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene editCentralScene = new Scene(editCentral);
+        editCentralStage.setScene(editCentralScene);
+        editCentralStage.show();
     }
 
 

@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.lang.Object;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import static Model.Main.*;
 
@@ -17,9 +19,12 @@ public class Student extends Common
 {
     public ArrayList<Course> registeredCourses = new ArrayList<>();
 
+    public ArrayList<Score> scores = new ArrayList<>();
+
     private String major;
     private int studentID;
     private int entryYear;
+
     public Boolean registerStatus = false;
 
     public void setMajor(String major)
@@ -37,9 +42,18 @@ public class Student extends Common
         this.entryYear = entryYear;
     }
 
-    public void register(Course course)
+    public void register(Course course, Student current)
     {
-        registeredCourses.add(course);
+        for (Course c : CentralManagement.semesters.get(CentralManagement.semesters.size() - 1).courses)
+        {
+            if (c.equals(course))
+            {
+                c.registeredStudents.add(current);
+                break;
+            }
+        }
+        current.registeredCourses.add(course);
+        CentralManagement.currentCourse = course;
     }
 
     public void scores()
@@ -47,15 +61,14 @@ public class Student extends Common
 
     }
 
-    public void schedule()
-    {
-
-    }
-
     @Override
-    protected void editInfo()
+    public void editInfo(ActionEvent event) throws IOException
     {
-
+        Parent editStudent = FXMLLoader.load(getClass().getResource("/View/editStudent.fxml"));
+        Stage editStudentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene editStudentScene = new Scene(editStudent);
+        editStudentStage.setScene(editStudentScene);
+        editStudentStage.show();
     }
 
     @Override
@@ -74,6 +87,8 @@ public class Student extends Common
         Student newS = (Student) current;
         students.put(newS, username);
         usernamePassword.put(username, password);
+
+        CentralManagement.currentStudent = newS;
 
         newS.login(username, password, event);
     }

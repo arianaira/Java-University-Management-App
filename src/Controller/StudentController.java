@@ -46,9 +46,13 @@ public class StudentController
     }
 
     @FXML
-    void scores(ActionEvent event)
+    void scores(ActionEvent event) throws IOException
     {
-
+        Parent scores = FXMLLoader.load(getClass().getResource("/View/scores.fxml"));
+        Stage scoresStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scoresScene = new Scene(scores);
+        scoresStage.setScene(scoresScene);
+        scoresStage.show();
     }
 
     @FXML
@@ -58,9 +62,9 @@ public class StudentController
     }
 
     @FXML
-    private void editInfo(ActionEvent event)
+    private void editInfo(ActionEvent event) throws IOException
     {
-
+        CentralManagement.currentStudent.editInfo(event);
     }
 
     @FXML

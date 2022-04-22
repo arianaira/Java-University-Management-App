@@ -4,12 +4,13 @@ import java.util.ArrayList;
 
 public class Course
 {
-    ArrayList<Student> registeredStudents = new ArrayList<>();
+    public ArrayList<Student> registeredStudents = new ArrayList<>();
+
     String professor;
 
     String name;
 
-    int units;
+    String units;
 
     public void setName(String name)
     {
@@ -31,10 +32,30 @@ public class Course
         return professor;
     }
 
-    public void setUnits(int units)
+    public void setUnits(String units)
     {
         this.units = units;
     }
 
+    public String getUnits()
+    {
+        return units;
+    }
 
+    public Professor findProfessor(String name)
+    {
+        Professor output = null;
+        for (Faculty f : CentralManagement.faculties)
+        {
+            for ( Professor p : f.professors)
+            {
+                String temp = p.getName() + " " + p.getLastName();
+                if (p.equals(temp))
+                {
+                    output = p;
+                }
+            }
+        }
+        return output;
+    }
 }

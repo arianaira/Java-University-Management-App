@@ -41,16 +41,25 @@ public class newCourseController implements Initializable
         {
             Course currentC = new Course();
             currentC.setName(courseName.getText());
-            currentC.setUnits(Integer.parseInt(cu.getText()));
+            currentC.setUnits(cu.getText());
             currentC.setProfessor(chooseProfessor.getValue());
+            CentralManagement.semesters.get(CentralManagement.semesters.size() - 1).courses.add(currentC);
             for (Faculty faculty : CentralManagement.faculties)
             {
                 if (faculties.getValue().equals(faculty.getFacultyName()))
                 {
                     faculty.courses.add(currentC);
+                    for (Professor professor : faculty.professors)
+                    {
+                        String name = professor.getName() + " " + professor.getLastName();
+                        if (name.equals(chooseProfessor.getValue()))
+                        {
+                            professor.courses.add(currentC);
+                            break;
+                        }
+                    }
+                    break;
                 }
-                CentralManagement.semesters.get(CentralManagement.semesters.size() - 1).courses.add(currentC);
-                break;
             }
             msg.setText("Course "+courseName.getText()+" Successfully Created");
         }
@@ -59,23 +68,25 @@ public class newCourseController implements Initializable
     @FXML
     void facultySelected(ActionEvent event)
     {
+        chooseProfessor.getItems().clear();
+        String output = faculties.getSelectionModel().getSelectedItem();
         for (Faculty faculty : CentralManagement.faculties)
         {
-            if (faculty.getFacultyName().equals(faculties.getValue()))
+            if (faculty.getFacultyName().equals(output))
             {
                 for (Professor professor : faculty.professors)
                 {
                     chooseProfessor.getItems().add(professor.getName()+" "+professor.getLastName());
                 }
+                break;
             }
-            break;
         }
     }
 
     @FXML
-    void editInfo(ActionEvent event)
+    void editInfo(ActionEvent event) throws IOException
     {
-
+        CentralManagement.editInfo(event);
     }
 
     @FXML

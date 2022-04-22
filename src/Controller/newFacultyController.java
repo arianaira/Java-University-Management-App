@@ -31,9 +31,9 @@ public class newFacultyController
     }
 
     @FXML
-    void editInfo(javafx.event.ActionEvent event)
+    void editInfo(javafx.event.ActionEvent event) throws IOException
     {
-
+        CentralManagement.editInfo(event);
     }
 
     @FXML

@@ -28,8 +28,9 @@ public class scheduleController implements Initializable
     }
 
     @FXML
-    private void editInfo(javafx.event.ActionEvent event)
+    private void editInfo(javafx.event.ActionEvent event) throws IOException
     {
+        CentralManagement.currentStudent.editInfo(event);
     }
 
     @FXML
@@ -43,12 +44,15 @@ public class scheduleController implements Initializable
     {
         TableColumn name = new TableColumn("Available Courses");
         TableColumn professor = new TableColumn("Professor");
+        TableColumn units = new TableColumn("Units");
 
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         professor.setCellValueFactory(new PropertyValueFactory<>("professor"));
+        units.setCellValueFactory(new PropertyValueFactory<>("units"));
+
         ObservableList<Course> availableCourses = FXCollections.observableArrayList(CentralManagement.currentStudent.registeredCourses);
         courses.setItems(availableCourses);
-        courses.getColumns().addAll(name, professor);
+        courses.getColumns().addAll(name, professor, units);
     }
 
     @FXML

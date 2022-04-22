@@ -1,4 +1,5 @@
 package Controller;
+import Model.CentralManagement;
 import Model.Common;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,9 +36,9 @@ public class newSemesterController implements Initializable
     }
 
     @FXML
-    private void editInfo(javafx.event.ActionEvent event)
+    private void editInfo(javafx.event.ActionEvent event) throws IOException
     {
-
+        CentralManagement.editInfo(event);
     }
 
     @FXML

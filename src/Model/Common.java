@@ -83,7 +83,7 @@ public abstract class Common
         return usernamePassword.containsKey(username);
     }
 
-    protected abstract void editInfo();
+    protected abstract void editInfo(ActionEvent event) throws IOException;
 
     public static Boolean passwordCorrect(String username, String password)
     {

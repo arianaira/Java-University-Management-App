@@ -13,9 +13,9 @@
       <Image url="@p.jpg" />
    </ImageView>
    <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="33.0" prefWidth="361.0" style="-fx-border-color: #227653;">
-      <Label layoutX="14.0" layoutY="1.0" prefHeight="30.0" prefWidth="584.0" text="Click On Which Of The Courses You Wish To Register For" textFill="#136013">
+      <Label layoutX="14.0" layoutY="1.0" prefHeight="30.0" prefWidth="584.0" text="Click On Which Of The Courses You Wish To Register For And Click Again To Delete The Course" textFill="#136013">
          <font>
-            <Font name="System Italic" size="14.0" />
+            <Font name="System Italic" size="11.0" />
          </font>
       </Label>
    </AnchorPane>
@@ -35,9 +35,26 @@
       </font>
    </Button>
    <TableView fx:id="courses" layoutX="240.0" layoutY="63.0" onMouseClicked="#courseSelection" prefHeight="331.0" prefWidth="372.0" style="-fx-background-color: white;" />
-   <Button layoutX="15.0" layoutY="63.0" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: #68914b;" text="Back">
+   <Button layoutX="11.0" layoutY="63.0" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: #68914b;" text="Back">
       <font>
          <Font name="System Bold Italic" size="14.0" />
       </font>
    </Button>
+   <AnchorPane layoutX="83.0" layoutY="63.0" prefHeight="30.0" prefWidth="73.0" style="-fx-border-color: #227653;">
+      <children>
+         <Label fx:id="unitsTaken" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="73.0" textFill="#1a9d9d">
+            <font>
+               <Font size="10.0" />
+            </font></Label>
+      </children></AnchorPane>
+   <Button layoutX="165.0" layoutY="63.0" mnemonicParsing="false" onAction="#done" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: #68914b;" text="Done">
+      <font>
+         <Font name="System Bold Italic" size="14.0" />
+      </font>
+   </Button>
+   <Label fx:id="msg" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="103.0" prefHeight="16.0" prefWidth="195.0" textFill="#08744e">
+      <font>
+         <Font name="System Italic" size="12.0" />
+      </font>
+   </Label>
 </AnchorPane>

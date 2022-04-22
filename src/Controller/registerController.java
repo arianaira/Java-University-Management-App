@@ -8,17 +8,26 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class registerController implements Initializable
 {
+    int units = 0;
+
+    @FXML
+    private Label unitsTaken;
+
+    @FXML
+    private Label msg;
+
+
     @FXML
     private TableView<Course> courses;
 
@@ -39,18 +48,21 @@ public class registerController implements Initializable
     {
         TableColumn name = new TableColumn("Available Courses");
         TableColumn professor = new TableColumn("Professor");
+        TableColumn units = new TableColumn("Units");
 
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         professor.setCellValueFactory(new PropertyValueFactory<>("professor"));
+        units.setCellValueFactory(new PropertyValueFactory<>("units"));
+
         ObservableList<Course> availableCourses = FXCollections.observableArrayList(CentralManagement.semesters.get(CentralManagement.semesters.size() - 1).courses);
         courses.setItems(availableCourses);
-        courses.getColumns().addAll(name, professor);
+        courses.getColumns().addAll(name, professor, units);
     }
 
     @FXML
-    private void editInfo(javafx.event.ActionEvent event)
+    private void editInfo(javafx.event.ActionEvent event) throws IOException
     {
-
+        CentralManagement.currentStudent.editInfo(event);
     }
 
     @FXML
@@ -68,8 +80,36 @@ public class registerController implements Initializable
     @FXML
     private void courseSelection(javafx.scene.input.MouseEvent mouseEvent)
     {
-        CentralManagement.currentStudent.registerStatus = true;
         Course row = courses.getSelectionModel().getSelectedItem();
-        CentralManagement.currentStudent.register(row);
+        if (CentralManagement.currentStudent.registeredCourses.contains(row))
+        {
+            CentralManagement.currentStudent.registeredCourses.remove(row);
+            units -= Integer.parseInt(row.getUnits());
+        }
+        else
+        {
+            CentralManagement.currentStudent.register(row, CentralManagement.currentStudent);
+            units += Integer.parseInt(row.getUnits());
+        }
+        unitsTaken.setText("Units : " + units);
+    }
+
+    @FXML
+    private void done(ActionEvent event) throws IOException
+    {
+        if (units < 12)
+        {
+            msg.setText("Minimum Allowed Units Is 12");
+        }
+        else if (units > 20)
+        {
+            msg.setText(("Maximum Allowed Units Is 20"));
+        }
+        else
+        {
+            CentralManagement.currentStudent.registerStatus = true;
+
+            back(event);
+        }
     }
 }
