@@ -10,8 +10,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.lang.Object;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import static Model.Main.*;
 
@@ -22,7 +20,7 @@ public class Student extends Common
     public ArrayList<Score> scores = new ArrayList<>();
 
     private String major;
-    private int studentID;
+    private String studentID;
     private int entryYear;
 
     public Boolean registerStatus = false;
@@ -34,7 +32,7 @@ public class Student extends Common
 
     public void setStudentID()
     {
-        this.studentID = students.size() + 1;
+        this.studentID = Integer.toString(Main.students.size() + 1);
     }
 
     public void setEntryYear(int entryYear)

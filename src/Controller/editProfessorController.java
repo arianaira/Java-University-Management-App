@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 public class editProfessorController implements Initializable
 {
@@ -55,6 +56,10 @@ public class editProfessorController implements Initializable
         else if (group.getText().trim().equals(""))
         {
             msg.setText(("group not entered"));
+        }
+        else if (!Pattern.compile(".{6,}").matcher(password.getText()).matches())
+        {
+            msg.setText("invalid password length");
         }
         else
         {

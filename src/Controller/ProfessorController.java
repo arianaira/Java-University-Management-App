@@ -5,21 +5,21 @@ import Model.Common;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ProfessorController
+public class ProfessorController implements Initializable
 {
-    private String username;
-
-    public void setUsername(String username)
-    {
-        this.username = username;
-    }
+    @FXML
+    private Label user;
 
     @FXML
     private void courses(ActionEvent event) throws IOException
@@ -47,5 +47,11 @@ public class ProfessorController
     private void LogOut(ActionEvent event) throws IOException
     {
         Common.logOut(event);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources)
+    {
+        user.setText("User : " + CentralManagement.currentProfessor.getUsername());
     }
 }

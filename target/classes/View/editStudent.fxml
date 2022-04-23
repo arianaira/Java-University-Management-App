@@ -42,6 +42,6 @@
             <Font name="System Italic" size="14.0" />
          </font>
       </Button>
-      <ComboBox fx:id="faculties" editable="true" layoutX="257.0" layoutY="307.0" prefHeight="25.0" prefWidth="169.0" promptText="choose faculty..." style="-fx-background-color: white;" />
+      <ComboBox fx:id="faculties" layoutX="257.0" layoutY="307.0" opacity="0.69" prefHeight="25.0" prefWidth="169.0" promptText="choose faculty..." style="-fx-background-color: white;" />
    </children>
 </AnchorPane>

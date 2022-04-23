@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 public class ProfessorSignUpController implements Initializable
 {
@@ -23,7 +24,6 @@ public class ProfessorSignUpController implements Initializable
 
     @FXML
     private TextField group;
-
 
     @FXML
     private TextField username;
@@ -38,7 +38,7 @@ public class ProfessorSignUpController implements Initializable
     private Label msg;
 
     @FXML
-    private void signUp(javafx.event.ActionEvent event) throws IOException
+    private void signUp(ActionEvent event) throws IOException
     {
         if (name.getText().trim().equals(""))
         {
@@ -55,6 +55,10 @@ public class ProfessorSignUpController implements Initializable
         else if (Common.signUpAllowed(username.getText()))
         {
             msg.setText("username already taken");
+        }
+        else if (!Pattern.compile(".{6,}").matcher(password.getText()).matches())
+        {
+            msg.setText("invalid password length");
         }
         else
         {

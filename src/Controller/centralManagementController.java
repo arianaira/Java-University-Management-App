@@ -5,15 +5,22 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import Model.Common;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class centralManagementController
+public class centralManagementController implements Initializable
 {
+    @FXML
+    private Label user;
+
     @FXML
     private void newSemester(javafx.event.ActionEvent event) throws IOException
     {
@@ -61,5 +68,11 @@ public class centralManagementController
     private void logOut(ActionEvent event) throws IOException
     {
         Common.logOut(event);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources)
+    {
+        user.setText("User : Central Management");
     }
 }

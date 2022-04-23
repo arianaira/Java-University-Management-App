@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 public class StudentSignUpController implements Initializable
 {
@@ -58,9 +59,13 @@ public class StudentSignUpController implements Initializable
         {
             msg.setText("major not entered");
         }
-        else if (entryYear.getText().trim().equals(""))
+        else if (!Pattern.compile("[0-9]{4}").matcher(entryYear.getText()).matches())
         {
-            msg.setText("entryYear not entered");
+            msg.setText("entryYear not valid");
+        }
+        else if (!Pattern.compile(".{6,}").matcher(password.getText()).matches())
+        {
+            msg.setText("invalid password length");
         }
         else if (Common.signUpAllowed(username.getText()))
         {
