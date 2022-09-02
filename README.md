@@ -1,6 +1,6 @@
 Golestan Stumilation :
 
-_university site for students , professors and university management using javaFX._
+_university application for students , professors and university management using javaFX._
 
 student's account features :
 
