@@ -1,4 +1,4 @@
-Golestan Stumilation :
+Golestan Stimulation :
 
 _university application for students , professors and university management using javaFX._
 
